@@ -5,12 +5,47 @@
     \def\BeamerAspectRatio{169} % Default slide size ratio 16:9
 \fi
 
+
 %--------------- Defines beamer document ----------------------
 \documentclass[aspectratio=\BeamerAspectRatio]{beamer}
 
-\usepackage{ProjectSpecificAdditionalPackages}
+% \usepackage{ProjectSpecificAdditionalPackages}
+\usetheme{LeipzigChemie}
+\usepackage{import}
+\usepackage[backend=biber,style=science,doi=false,isbn=false,url=false,eprint=false,date=year,citestyle=numeric-comp,]{biblatex}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
 
-\import{./}{TitlePageInfo.tex}
+%%%%%%%%%%%%%% Noteblock %%%%%%%%%%%%%%%%%%%%%%%
+\newtcolorbox{mynote}[1][Note]{
+	colback=white,
+	colbacktitle=aquamarin,
+	coltitle=white,
+	colframe=aquamarin,
+	titlerule=1pt,
+	title={\strut#1}
+}
+%%%%%%%%%%%%%% Alertblock %%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcolorbox{myalert}[1][Alert]{
+	colback=white,
+	colbacktitle=karneol,
+	coltitle=white,
+	colframe=karneol,
+	titlerule=1pt,
+	title={\strut#1}
+}
+
+\title[ESDC]{The Earth System Data Cube}
+\subtitle[Group seminar]{Seminar title (e.g. Group seminar)} 
+\author{Your Name}
+\institute{
+  RSC4Earth\\
+  Fakult\"at f\"ur Chemie und und Mineralogie\\
+  Universit\"at Leipzig}
+\date{\today}
+\GroupLogo{imglib/ChemistryLogo.png}
+
 \addbibresource{references.bib}
 
 %-------------- Start documents -------------------------------
@@ -20,7 +55,22 @@
 %\makesubsectionpopup %% This will show table of content slides before move to each subsection
 \makesectionpopup %% This will show section name slide before move to each section
 
-\import{slides/}{Introduction.tex}
+\section[Intro]{Introduction}
+\begin{frame}{Introduction}
+  
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+      \item Hi there, this is a self inspired latex beamer template for Leipzig
+        university.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      sa;ldh
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \import{slides/}{Motivation.tex}
 \import{slides/}{Notes.tex}
 \import{slides/}{CitationExample.tex}
@@ -31,3 +81,9 @@
 \import{slides/}{disclaimer.tex}
 %%\import{./}{test.tex}
 \end{document}
+
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-engine: luatex
+%%% End:

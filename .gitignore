@@ -1,0 +1,16 @@
+/auto/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.nav
+*.out
+*.xml
+*.snm
+*.synctex.gz
+*.rej
+*.toc
+*.vrb
+_region_.tex
+.pdf-view-restore
